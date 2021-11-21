@@ -1,0 +1,27 @@
+{
+  "name": "idiid",
+  "version": "1.0.0",
+  "description": "IDIID",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js",
+    "client": "cd idiid && npm run serve",
+    "dev": "concurrently --names \"server,idiid\" \"npm run server --silent\" \"npm run client --silent\""
+  },
+  "keywords": [],
+  "author": "Melissa Schwartz",
+  "license": "",
+  "devDependencies": {
+    "concurrently": "^6.3.0",
+    "nodemon": "^2.0.14"
+  },
+  "dependencies": {
+    "apollo-server": "^3.4.1",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "graphql": "^15.7.2",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.3.0",
+    "mongoose": "^6.0.12"
+  }
+}
