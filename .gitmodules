@@ -1,0 +1,3 @@
+[submodule "idiid"]
+	path = idiid
+	url = https://github.com/melissjs/IDIIDS.git
