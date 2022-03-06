@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  db:
+    image: mongo:5.0.5
+  server:
+    image: node:16.13.1-alpine
+    command: npm run server
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+  client:
+    image: node:16.13.1-alpine
+    command: npm run serve
+    working_dir: /app/idiid
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+      - server

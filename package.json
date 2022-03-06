@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "server": "nodemon server.js",
-    "client": "cd idiid && npm run serve",
-    "dev": "concurrently --names \"server,idiid\" \"npm run server --silent\" \"npm run client --silent\""
+    "dev": " docker-compose -p idiid up -d",
+    "dev-down": " docker-compose -p idiid down"
   },
   "keywords": [],
   "author": "Melissa Schwartz",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "apollo-server": "^3.4.1",
-    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^10.0.0",
     "graphql": "^15.7.2",
     "jsonwebtoken": "^8.5.1",

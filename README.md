@@ -9,11 +9,14 @@ run mongod (this before running server)
 run mongo (mongo for shell)
 
 notes for mongo db https://www.youtube.com/watch?v=pWbMrx5rVBE
+commands https://docs.mongodb.com/manual/reference/mongo-shell/
 brew services start mongodb-community@5.0
 brew services stop mongodb-community@5.0
 mongo
 use idiid
 show dbs
+show collections
+db.tasks.find()
 
 NVM ::::::::::::::::::::::::::::::::::::::::::::::::::::
 node -v
@@ -26,3 +29,6 @@ CLIENT ::::::::::::::::::::::::::::::::::::::::::::::::::::
 cd client
 npm run serve (idiids)
 
+package.json
+  "dev": "concurrently --names \"server,idiid\" \"npm run server --silent\" \"npm run client --silent\""
+  "client": "cd idiid && npm run serve",
