@@ -30,11 +30,15 @@ mongoose.connect('mongodb://db:27017/idiid')
     }
   }
 
-// create opollo/graphql server
+// create apollo/graphql server
 // with typedefs, resolvers and context
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  formatError: (error) => ({
+    name: error.name,
+    message: error.message.replace('Context creation failed:', ''),
+  }),
   context: async ({ req }) => {
     const token = req.headers.authorization
     const currentUser = await getUser(token)
